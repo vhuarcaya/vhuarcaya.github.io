@@ -15,6 +15,74 @@
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
   
+  <!-- Additional styles for project images -->
+  <style>
+    .project-image-container {
+      position: relative;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: var(--space-xl);
+      background: var(--bg-secondary);
+    }
+    
+    .project-image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    
+    .project-image-container:hover img {
+      transform: scale(1.02);
+    }
+    
+    .project-image-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--space-md) var(--space-lg);
+      background: linear-gradient(transparent, rgba(10, 14, 23, 0.9));
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+    }
+    
+    .project-gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid var(--border-subtle);
+      transition: all 0.3s ease;
+    }
+    
+    .project-gallery img:hover {
+      border-color: var(--accent-primary);
+      transform: translateY(-2px);
+    }
+    
+    .project-single-image {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      margin-bottom: var(--space-lg);
+    }
+    
+    @media (max-width: 768px) {
+      .project-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='none' stroke='%2338bdf8' stroke-width='4'/><circle cx='50' cy='50' r='8' fill='%2338bdf8'/></svg>">
 </head>
@@ -22,7 +90,7 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Victor Huarcaya</a>
+      <a href="index.html" class="nav-logo">V. Huarcaya</a>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -57,10 +125,19 @@
   <section style="padding-top: 0;">
     <div class="container">
       
-      <!-- CoCa Project -->
+      <!-- ============================================
+           PROJECT 1: CoCa / COMET INTERCEPTOR
+           ============================================ -->
       <article id="coca" class="card card-highlight" style="margin-bottom: var(--space-2xl);">
-        <img src="assets/coca.png" alt="CoCa integration in ISO 5 cleanroom" 
-         style="width: 100%; border-radius: 8px; margin-bottom: var(--space-xl);">
+        
+        <!-- Main Project Image -->
+        <div class="project-image-container">
+          <img src="assets/coca.png" alt="CoCa telescope integration in ISO 5 cleanroom">
+          <div class="project-image-caption">
+            CoCa optical bench integration at University of Bern cleanroom facility
+          </div>
+        </div>
+        
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: start;">
           <div>
             <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
@@ -102,6 +179,15 @@
           </div>
           
           <div style="background: var(--bg-secondary); border-radius: 8px; padding: var(--space-xl);">
+            
+            <!-- Optional: Gallery of smaller images - UNCOMMENT and add images -->
+            <!-- 
+            <div class="project-gallery">
+              <img src="assets/coca-detail-1.jpg" alt="CoCa optical alignment">
+              <img src="assets/coca-detail-2.jpg" alt="CoCa cleanroom work">
+            </div>
+            -->
+            
             <h4 style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-primary); margin-bottom: var(--space-lg);">
               TECHNICAL DETAILS
             </h4>
@@ -140,8 +226,22 @@
         </div>
       </article>
       
-      <!-- LISA Phase Measurement -->
+      
+      <!-- ============================================
+           PROJECT 2: LISA PHASE MEASUREMENT
+           ============================================ -->
       <article class="card" style="margin-bottom: var(--space-2xl);">
+        
+        <!-- Main Project Image - UNCOMMENT and add your image -->
+        <!--
+        <div class="project-image-container">
+          <img src="assets/lisa-optical-bench.jpg" alt="LISA optical bench integration">
+          <div class="project-image-caption">
+            LISA Phase Measurement Subsystem optical bench at AEI Hannover
+          </div>
+        </div>
+        -->
+        
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: start;">
           <div>
             <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
@@ -179,6 +279,12 @@
           </div>
           
           <div style="background: var(--bg-secondary); border-radius: 8px; padding: var(--space-xl);">
+            
+            <!-- Image in sidebar - UNCOMMENT and add your image -->
+            <!--
+            <img src="assets/lisa-interferometer.jpg" alt="LISA interferometer" class="project-single-image">
+            -->
+            
             <h4 style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-secondary); margin-bottom: var(--space-lg);">
               TECHNICAL DETAILS
             </h4>
@@ -210,12 +316,26 @@
         </div>
       </article>
       
-      <!-- Sub-Picometer Interferometry -->
-      <article class="card card-highlight" style="margin-bottom: var(--space-2xl); --accent-gold: #38bdf8;">
+      
+      <!-- ============================================
+           PROJECT 3: SUB-PICOMETER INTERFEROMETRY
+           ============================================ -->
+      <article class="card card-highlight" style="margin-bottom: var(--space-2xl); --accent-gold: #fbbf24;">
+        
+        <!-- Main Project Image - UNCOMMENT and add your image -->
+        <!--
+        <div class="project-image-container">
+          <img src="assets/subpicometer-vacuum.jpg" alt="Sub-picometer interferometer in vacuum chamber">
+          <div class="project-image-caption">
+            Compact Mach-Zehnder interferometer achieving world-record stability in UHV environment
+          </div>
+        </div>
+        -->
+        
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: start;">
           <div>
             <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
-              <span class="tag" style="margin: 0; background: rgba(251, 191, 36, 0.15); color: var(--accent-gold);">WORLD RECORD</span>
+              <span class="tag" style="margin: 0; background: rgba(251, 191, 36, 0.15); color: #fbbf24;">WORLD RECORD</span>
               <span style="color: var(--text-muted); font-size: 0.9rem;">2017-2023</span>
             </div>
             <h2 style="margin-bottom: var(--space-md);">Sub-Picometer Interferometry</h2>
@@ -225,7 +345,7 @@
             
             <p>
               Achieved the world's most stable compact interferometer — demonstrating structural stability 
-              below <strong style="color: var(--accent-gold);">1 picometer per root-Hz</strong> at frequencies 
+              below <strong style="color: #fbbf24;">1 picometer per root-Hz</strong> at frequencies 
               below 1 millihertz. This represents the frontier of displacement measurement, limited primarily 
               by fundamental physics.
             </p>
@@ -235,22 +355,28 @@
             </h4>
             <ul style="list-style: none;">
               <li style="padding: var(--space-sm) 0; padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">
-                <span style="position: absolute; left: 0; color: var(--accent-gold);">→</span>
+                <span style="position: absolute; left: 0; color: #fbbf24;">→</span>
                 World-record structural stability: &lt;1 pm/√Hz below 1 mHz
               </li>
               <li style="padding: var(--space-sm) 0; padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">
-                <span style="position: absolute; left: 0; color: var(--accent-gold);">→</span>
+                <span style="position: absolute; left: 0; color: #fbbf24;">→</span>
                 Demonstrated 2×10⁻¹³ fractional laser frequency stability with 7-cm interferometer
               </li>
               <li style="padding: var(--space-sm) 0; padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">
-                <span style="position: absolute; left: 0; color: var(--accent-gold);">→</span>
+                <span style="position: absolute; left: 0; color: #fbbf24;">→</span>
                 Novel single-element dual-interferometer architecture reducing complexity
               </li>
             </ul>
           </div>
           
           <div style="background: var(--bg-secondary); border-radius: 8px; padding: var(--space-xl);">
-            <h4 style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-gold); margin-bottom: var(--space-lg);">
+            
+            <!-- Image in sidebar - UNCOMMENT and add your image -->
+            <!--
+            <img src="assets/noise-spectrum.png" alt="Noise spectrum showing sub-picometer stability" class="project-single-image">
+            -->
+            
+            <h4 style="font-family: var(--font-mono); font-size: 0.8rem; color: #fbbf24; margin-bottom: var(--space-lg);">
               TECHNICAL DETAILS
             </h4>
             
@@ -283,8 +409,22 @@
         </div>
       </article>
       
-      <!-- 5-DOF Optical Readout -->
+      
+      <!-- ============================================
+           PROJECT 4: 5-DOF OPTICAL READOUT
+           ============================================ -->
       <article class="card" style="margin-bottom: var(--space-2xl);">
+        
+        <!-- Main Project Image - UNCOMMENT and add your image -->
+        <!--
+        <div class="project-image-container">
+          <img src="assets/5dof-optical-lever.jpg" alt="5-DOF optical lever readout system">
+          <div class="project-image-caption">
+            Five degrees-of-freedom optical readout system for gravitational reference sensors
+          </div>
+        </div>
+        -->
+        
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: start;">
           <div>
             <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
@@ -321,6 +461,12 @@
           </div>
           
           <div style="background: var(--bg-secondary); border-radius: 8px; padding: var(--space-xl);">
+            
+            <!-- Image in sidebar - UNCOMMENT and add your image -->
+            <!--
+            <img src="assets/5dof-schematic.png" alt="5-DOF readout schematic" class="project-single-image">
+            -->
+            
             <h4 style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-primary); margin-bottom: var(--space-lg);">
               TECHNICAL DETAILS
             </h4>
@@ -348,8 +494,22 @@
         </div>
       </article>
       
-      <!-- Early Career Highlight -->
-      <article class="card" style="background: linear-gradient(135deg, var(--bg-card) 0%, rgba(56, 189, 248, 0.05) 100%);">
+      
+      <!-- ============================================
+           PROJECT 5: PARABOLIC FLIGHT (EARLY CAREER)
+           ============================================ -->
+      <article class="card" style="background: linear-gradient(135deg, var(--bg-card) 0%, rgba(56, 189, 248, 0.05) 100%); margin-bottom: var(--space-2xl);">
+        
+        <!-- Main Project Image - UNCOMMENT and add your image -->
+        <!--
+        <div class="project-image-container" style="margin-bottom: var(--space-xl);">
+          <img src="assets/parabolic-flight.jpg" alt="ESA Parabolic Flight Campaign team">
+          <div class="project-image-caption">
+            Zero-g experiment team during ESA Student Parabolic Flight Campaign, Bordeaux 2004
+          </div>
+        </div>
+        -->
+        
         <div style="text-align: center; max-width: 700px; margin: 0 auto;">
           <span class="tag" style="background: rgba(56, 189, 248, 0.15);">EARLY CAREER</span>
           <h2 style="margin-top: var(--space-md); margin-bottom: var(--space-md);">ESA Parabolic Flight Campaign</h2>
@@ -360,12 +520,76 @@
             instability in zero-g" — an early indicator of the path that would lead to space instrumentation.
           </p>
           
-          <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: var(--space-lg); margin-bottom: 0;">
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: var(--space-lg);">
             This ESA-sponsored campaign gave me my first taste of space-related research and 
             confirmed my interest in experimental physics at the intersection of aerospace and precision measurement.
           </p>
+          
+          <a href="https://www.esa.int/Education/Fly_Your_Thesis/Parabolic_flights" target="_blank" rel="noopener" 
+             class="btn btn-outline" style="margin-top: var(--space-xl);">
+            About ESA Parabolic Flights →
+          </a>
         </div>
       </article>
+      
+      
+      <!-- ============================================
+           ADD MORE PROJECTS BELOW
+           Copy the template and fill in your details
+           ============================================ -->
+      
+      <!--
+      <article class="card" style="margin-bottom: var(--space-2xl);">
+        
+        <div class="project-image-container">
+          <img src="assets/YOUR-IMAGE.jpg" alt="Description">
+          <div class="project-image-caption">
+            Image caption here
+          </div>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: start;">
+          <div>
+            <div style="display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg);">
+              <span class="tag" style="margin: 0;">YEAR</span>
+              <span style="color: var(--text-muted); font-size: 0.9rem;">Category</span>
+            </div>
+            <h2 style="margin-bottom: var(--space-md);">Project Title</h2>
+            <h3 style="font-family: var(--font-body); font-weight: 400; color: var(--text-secondary); margin-bottom: var(--space-lg);">
+              Subtitle
+            </h3>
+            
+            <p>Description paragraph...</p>
+            
+            <h4 style="font-family: var(--font-body); font-size: 1rem; margin-top: var(--space-xl); margin-bottom: var(--space-md); color: var(--text-primary);">
+              Key Contributions
+            </h4>
+            <ul style="list-style: none;">
+              <li style="padding: var(--space-sm) 0; padding-left: var(--space-lg); position: relative; color: var(--text-secondary);">
+                <span style="position: absolute; left: 0; color: var(--accent-primary);">→</span>
+                Contribution 1
+              </li>
+            </ul>
+          </div>
+          
+          <div style="background: var(--bg-secondary); border-radius: 8px; padding: var(--space-xl);">
+            <h4 style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-primary); margin-bottom: var(--space-lg);">
+              TECHNICAL DETAILS
+            </h4>
+            
+            <div style="margin-bottom: var(--space-lg);">
+              <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: var(--space-xs);">Label</p>
+              <p style="margin-bottom: 0; color: var(--text-primary);">Value</p>
+            </div>
+            
+            <a href="https://link.com" target="_blank" rel="noopener" 
+               style="display: inline-flex; align-items: center; gap: var(--space-sm); font-size: 0.9rem;">
+              Link Text →
+            </a>
+          </div>
+        </div>
+      </article>
+      -->
       
     </div>
   </section>
